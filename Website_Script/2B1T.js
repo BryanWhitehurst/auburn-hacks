@@ -6,29 +6,15 @@ function Login(){
 }
 
 function getPlaylists(){
-    var request = new XMLHttpRequest();
+    var data = {a:"Driving", b:"Party", c:"Studying"};
+    var select = document.getElementById("userPlaylistsOne");
 
-    var myJSON = {"playlists":[{"playlistName":"driving","playlistID":0},{"playlistName":"party","playlistID":1}, {"playlistName":"studying", "playlistID":2}]}
-
-    request.open('GET', "http://172.88.183:5000/", false)
-    request.onload = function(){
-
-        if(request.status >= 200 && request.status < 400){
-            var data = JSON.parse(myJSON);
-            dropdown = document.getElementById(UserPlaylistOne)
-            i = 1;
-            data.forEach(playlist => {
-                dropdown.options[dropdown.options.length] = new Option(i,playlist.playlistName.value) 
-                i++;
-            });
-        }else{
-            console.log('error');
+    for (var key in data) 
+    {
+        if (data.hasOwnProperty(key)) {
+            select.options[select.options.length] = new Option(data[key], '0');
         }
-    }
-
-    request.send()
-
-    
+      }
 }
 
 function getSongs(){
@@ -59,13 +45,55 @@ function getSongs(){
 
     function OpenSpotify()
     {
-        GetPlaylists();
+        window.open("https://spotify.com/login");
         DisplayPlaylists();
+        getPlaylists();
     }
 
     function MakePlaylistSelectionVisible()
     {
         var Playlist = document.getElementById("userPlaylistsOne")
-        // FOR PLAYLIST LENGTH, ADD OPTIONS
+        // FOR PLAYLIST LENGTH, ADD OPTIONS\
         Playlist.style.visibility = "visible";
+
+        var button = document.getElementById("submitButton")
+        button.style.visibility = "visible";
+    }
+
+    function DisplaySecondSpotifyLogin()
+    {
+        var y = document.getElementById("loginWithSpotify2");
+        y.style.visibility = "visible";
+    }
+
+    function LoginWithSecondSpotify()
+    {
+        var Playlist = document.getElementById("userPlaylistsOne")
+        // FOR PLAYLIST LENGTH, ADD OPTIONS\
+        Playlist.style.visibility = "hidden";
+
+        var button = document.getElementById("submitButton")
+        button.style.visibility = "hidden";
+
+        // HIDE FIRST SELECTIONS, DISPLAY SECOND SPOTIFY LOGIN
+        DisplaySecondSpotifyLogin();
+    }
+
+    function OpenMergedPlaylist()
+    {
+        window.open("final_screen.html");
+    }
+
+    function OpenSpotify2()
+    {
+        window.open("https://spotify.com/login");
+
+        var y = document.getElementById("loginWithSpotify2");
+        y.style.visibility = "hidden";
+
+        var Playlist2 = document.getElementById("userPlaylistsTwo")
+        Playlist2.style.visibility = "visible";
+
+        var button2 = document.getElementById("submitButton2")
+        button2.style.visibility = "visible";
     }

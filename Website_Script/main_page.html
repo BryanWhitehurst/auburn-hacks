@@ -19,55 +19,27 @@
             </div>
 
             <div class="login-with-spotify" div style="visibility: hidden;" id="loginWithSpotify1">
-                <input class = "btn" type = "button" name = "" value = "Login With First Spotify" onclick="OpenSpotify()">
+                <input class = "btn" type = "button" name = "" value = "Login With Spotify 1" onclick="OpenSpotify()">
             </div>
 
-            <div class="navigate-playlist" div style="visibility: hidden;"" id="userPlaylistsOne" style="width: 200px;">
-                <select>
-                    <option value="0">Select Playlist:</option>
+            <div class="login-with-spotify" div style="visibility: hidden;" id="loginWithSpotify2">
+                <input class = "btn" type = "button" name = "" value = "Login With Spotify 2" onclick="OpenSpotify2()">
+            </div>
+
+            <div class="navigate-playlist" div style="visibility: hidden;" style="width: 200px;">
+                <select id="userPlaylistsOne">
+                    <option value="1">Select Playlist:</option>
                 </select>
-                <input class = "btn" type = "button" name = "" value = "Submit" onclick="OpenMergedPlaylist()">
+                <input class = "btn" type = "button" name = "" value = "Submit" onclick="LoginWithSecondSpotify()" div style="visibility: hidden;" id="submitButton" onclick="DisplaySecondSpotifyLogin()">
+            </div>
+
+            <div class="navigate-playlist" div style="visibility: hidden;" style="width: 200px;">
+                <select id="userPlaylistsTwo">
+                    <option value="1">Select Playlist:</option>
+                    <option value="2">Dance</option>
+                    <option value="3">Run Around</option>
+                    <option value="4">Code forever</option>
+                </select>
+                <input class = "btn" type = "button" name = "" value = "Submit" onclick="OpenMergedPlaylist()" div style="visibility: hidden;" id="submitButton2">
             </div>
     </head> 
-    
-<script>
-    function displayName()
-    {
-        document.getElementById("welcome").innerHTML = "Welcome, " + sessionStorage.getItem("username") + "!"
-    }
-
-    function DisplayFirstSpotifyLogin()
-    {
-        var x = document.getElementById("addRoom");
-        x.style.visibility = "hidden";
-
-        var y = document.getElementById("loginWithSpotify1");
-        y.style.visibility = "visible";
-    }
-
-    function DisplayPlaylists()
-    {
-        var y = document.getElementById("loginWithSpotify1");
-        y.style.visibility = "hidden";
-
-        MakePlaylistSelectionVisible();
-    }
-
-    function OpenSpotify()
-    {
-        GetPlaylists();
-        DisplayPlaylists();
-    }
-
-    function MakePlaylistSelectionVisible()
-    {
-        var Playlist = document.getElementById("userPlaylistsOne")
-        // FOR PLAYLIST LENGTH, ADD OPTIONS
-        Playlist.style.visibility = "visible";
-    }
-
-    function OpenMergedPlaylist()
-    {
-        window.open("final_screen.html");
-    }
-</script>
