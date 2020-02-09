@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="2B1T.js">
+        </script>
+        <meta charset="utf-8">
+        <title>Design Your Room</title>
+        <link rel="stylesheet" href="style1.css">
+            <div class="display-box">
+                <body onload="displayName()">
+                    <h1 id="welcome"></h1>
+                </body>
+            </div>
+
+            <div class="room-box" div style="visibility: visible;">
+                <input class = "btn" type = "button" name = "" value = "Add Room" onclick="DisplayFirstSpotifyLogin()" id="addRoom">
+            </div>
+
+            <div class="login-with-spotify" div style="visibility: hidden;" id="loginWithSpotify1">
+                <input class = "btn" type = "button" name = "" value = "Login With First Spotify" onclick="DisplaySecondSpotifyLogin()">
+            </div>
+
+            <div class="login-with-spotify" div style="visibility: hidden;" id="loginWithSpotify2">
+                <input class = "btn" type = "button" name = "" value = "Login With Second Spotify">
+            </div>
+    </head> 
+    
+<script>
+    function displayName()
+    {
+        document.getElementById("welcome").innerHTML = "Welcome, " + sessionStorage.getItem("username")
+    }
+
+    function DisplayFirstSpotifyLogin()
+    {
+        var x = document.getElementById("addRoom");
+        x.style.visibility = "hidden";
+
+        var y = document.getElementById("loginWithSpotify1");
+        y.style.visibility = "visible";
+    }
+
+    function DisplaySecondSpotifyLogin()
+    {
+        var x = document.getElementById("loginWithSpotify1");
+        x.style.visibility = "hidden";
+
+        var y = document.getElementById("loginWithSpotify2");
+        y.style.visibility = "visible";
+    }
+</script>
