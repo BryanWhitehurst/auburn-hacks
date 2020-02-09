@@ -8,15 +8,18 @@ function Login(){
 function getPlaylists(){
     var request = new XMLHttpRequest();
 
-    var myJSON = {"playlistName":["driving","party", "studying"]}
+    var myJSON = {"playlists":[{"playlistName":"driving","playlistID":0},{"playlistName":"party","playlistID":1}, {"playlistName":"studying", "playlistID":2}]}
 
     request.open('GET', "http://172.88.183:5000/", false)
     request.onload = function(){
 
         if(request.status >= 200 && request.status < 400){
             var data = JSON.parse(myJSON);
+            dropdown = document.getElementById(UserPlaylistOne)
+            i = 1;
             data.forEach(playlist => {
-                
+                dropdown.options[dropdown.options.length] = new Option(i,playlist.playlistName.value) 
+                i++;
             });
         }else{
             console.log('error');
@@ -26,6 +29,10 @@ function getPlaylists(){
     request.send()
 
     
+}
+
+function getSongs(){
+    var request = new XMLHttpRequest
 }
 
     function displayName()
