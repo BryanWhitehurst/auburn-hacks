@@ -8,11 +8,25 @@ body{
     background-size: cover;
 }
 
+img {
+    padding-top: 20px;
+    padding-left: 20px;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+h2 {
+    padding-left: 250px;
+    margin-top: -130px;
+    font-size: 50px;
+}
+
 .room-box{
     width: 280px;
     position: absolute;
-    top: 22%;
-    left: 50%;
+    top: 38%;
+    left: 46.5%;
     transform: translate(-50%, -50%);
     color: white;
 }
@@ -20,16 +34,22 @@ body{
 .login-with-spotify{
     width: 500px;
     position: absolute;
-    top: 22%;
-    left: 56.5%;
+    top: 38%;
+    left: 53%;
     transform: translate(-50%, -50%);
     color: white;
 }
 
-.display-box{
-    width: 280px;
+.navigate-playlist{
     position: absolute;
-    top: 10%;
+    top: 36.5%;
+    left: 38.05%;
+}
+
+.display-box{
+    width: 400px;
+    position: absolute;
+    top: 30%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;

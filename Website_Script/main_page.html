@@ -4,6 +4,8 @@
         <script type="text/javascript" src="2B1T.js">
         </script>
         <meta charset="utf-8">
+        <img src="Logo.png" alt="logo" style="width:200px; height:200px; float:center;">
+        <h2>Two Birds One Tone</h2>
         <title>Design Your Room</title>
         <link rel="stylesheet" href="style1.css">
             <div class="display-box">
@@ -17,18 +19,21 @@
             </div>
 
             <div class="login-with-spotify" div style="visibility: hidden;" id="loginWithSpotify1">
-                <input class = "btn" type = "button" name = "" value = "Login With First Spotify" onclick="DisplaySecondSpotifyLogin()">
+                <input class = "btn" type = "button" name = "" value = "Login With First Spotify" onclick="OpenSpotify()">
             </div>
 
-            <div class="login-with-spotify" div style="visibility: hidden;" id="loginWithSpotify2">
-                <input class = "btn" type = "button" name = "" value = "Login With Second Spotify">
+            <div class="navigate-playlist" div style="visibility: hidden;"" id="userPlaylistsOne" style="width: 200px;">
+                <select>
+                    <option value="0">Select Playlist:</option>
+                </select>
+                <input class = "btn" type = "button" name = "" value = "Submit" onclick="OpenMergedPlaylist()">
             </div>
     </head> 
     
 <script>
     function displayName()
     {
-        document.getElementById("welcome").innerHTML = "Welcome, " + sessionStorage.getItem("username")
+        document.getElementById("welcome").innerHTML = "Welcome, " + sessionStorage.getItem("username") + "!"
     }
 
     function DisplayFirstSpotifyLogin()
@@ -40,12 +45,29 @@
         y.style.visibility = "visible";
     }
 
-    function DisplaySecondSpotifyLogin()
+    function DisplayPlaylists()
     {
-        var x = document.getElementById("loginWithSpotify1");
-        x.style.visibility = "hidden";
+        var y = document.getElementById("loginWithSpotify1");
+        y.style.visibility = "hidden";
 
-        var y = document.getElementById("loginWithSpotify2");
-        y.style.visibility = "visible";
+        MakePlaylistSelectionVisible();
+    }
+
+    function OpenSpotify()
+    {
+        GetPlaylists();
+        DisplayPlaylists();
+    }
+
+    function MakePlaylistSelectionVisible()
+    {
+        var Playlist = document.getElementById("userPlaylistsOne")
+        // FOR PLAYLIST LENGTH, ADD OPTIONS
+        Playlist.style.visibility = "visible";
+    }
+
+    function OpenMergedPlaylist()
+    {
+        window.open("final_screen.html");
     }
 </script>

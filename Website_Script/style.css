@@ -8,10 +8,24 @@ body{
     background-size: cover;
 }
 
+img {
+    padding-top: 20px;
+    padding-left: 20px;
+    image-rendering: auto;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}
+
+h2 {
+    padding-left: 250px;
+    margin-top: -130px;
+    font-size: 50px;
+}
+
 .login-box{
-    width: 280px;
+    width: 400px;
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -22,7 +36,7 @@ body{
     color: black;
     font-size: 40px;
     border-bottom: 8px solid #4caf50;
-    margin-bottom: 14px;
+    margin-bottom: 20px;
     padding 13px 0;
 }
 
@@ -51,7 +65,7 @@ body{
     font-size: 18px;
     width: 80%;
     float: left;
-    margin: 0 10px;
+    margin: 0 15px;
 }
 
 .btn{

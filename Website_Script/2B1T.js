@@ -27,3 +27,38 @@ function getPlaylists(){
 
     
 }
+
+    function displayName()
+    {
+        document.getElementById("welcome").innerHTML = "Welcome, " + sessionStorage.getItem("username") + "!"
+    }
+
+    function DisplayFirstSpotifyLogin()
+    {
+        var x = document.getElementById("addRoom");
+        x.style.visibility = "hidden";
+
+        var y = document.getElementById("loginWithSpotify1");
+        y.style.visibility = "visible";
+    }
+
+    function DisplayPlaylists()
+    {
+        var y = document.getElementById("loginWithSpotify1");
+        y.style.visibility = "hidden";
+
+        MakePlaylistSelectionVisible();
+    }
+
+    function OpenSpotify()
+    {
+        GetPlaylists();
+        DisplayPlaylists();
+    }
+
+    function MakePlaylistSelectionVisible()
+    {
+        var Playlist = document.getElementById("userPlaylistsOne")
+        // FOR PLAYLIST LENGTH, ADD OPTIONS
+        Playlist.style.visibility = "visible";
+    }
