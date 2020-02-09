@@ -7,22 +7,23 @@ function Login(){
 
 function getPlaylists(){
     var request = new XMLHttpRequest();
-    request.open('GET', "http://localhost:8080/2B1T/getAllPlaylists?spotifyUsername=NULL&spotifyPassword=NULL", false)
 
+    var myJSON = {"playlistName":["driving","party", "studying"]}
+
+    request.open('GET', "http://172.88.183:5000/", false)
     request.onload = function(){
-        var playlists = JSON.parse(this.responseText);
-        if(this.readyState == 4 && this.status == 200){
-            playlists.forEach(pll => {
-                console.log(pll.title)
+
+        if(request.status >= 200 && request.status < 400){
+            var data = JSON.parse(myJSON);
+            data.forEach(playlist => {
+                
             });
         }else{
-            console.log(this.status);
+            console.log('error');
         }
     }
 
-    /*request.send(){
+    request.send()
 
-    }
-    */
     
 }
